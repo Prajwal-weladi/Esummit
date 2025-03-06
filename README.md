@@ -1,4 +1,4 @@
-Hello Peope This is a Website for Upcomming VEDC event name ESUMMIT'25
+Hello People, This is a react based Website under design for the upcomming VEDC event name ESUMMIT'25
 
 To Run this project seamlessly Run the follwing commands
 
