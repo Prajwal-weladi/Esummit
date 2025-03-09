@@ -1,0 +1,101 @@
+/* Import Google Fonts for creative typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #0a0a0a;
+  height: 100%;
+}
+
+/* Main container styling */
+.etalks-container {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0a0a0a;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+
+/* Background video styling */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.25;
+  z-index: -1;
+}
+
+/* Content area styling */
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Title styling */
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #00aaff;
+  margin-bottom: 1rem;
+}
+
+/* Subtitle styling */
+.subtitle {
+  font-size: 1.25rem;
+  color: #cccccc;
+  margin-bottom: 2rem;
+}
+
+/* Responsive grid for speaker cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+/* Speaker card styling */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 170, 255, 0.3);
+}
+
+/* Speaker image: circular with 50% border radius */
+.card-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border: 4px solid #00aaff;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+/* Speaker name styling */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Speaker position styling */
+.card-position {
+  font-size: 1rem;
+  color: #bbbbbb;
+}
