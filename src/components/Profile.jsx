@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../firebaseConfig";
+import QRCode from "react-qr-code";
 
 const Profile = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [registeredEvents, setRegisteredEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,7 +22,6 @@ const Profile = () => {
     return () => unsubscribe();
   }, [navigate]);
 
-  // Fetch Registered Events from Google Sheets API
   const fetchRegisteredEvents = async (userEmail) => {
     try {
       const response = await fetch(
@@ -28,12 +29,11 @@ const Profile = () => {
       );
       const data = await response.json();
 
-      // Find the row corresponding to the logged-in user
       const userRow = data.find((row) => row.Email === userEmail);
       if (userRow) {
         setRegisteredEvents(userRow["Registered Events"].split(", "));
       } else {
-        setRegisteredEvents([]); // No events found
+        setRegisteredEvents([]);
       }
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -77,7 +77,8 @@ const Profile = () => {
               registeredEvents.map((event, index) => (
                 <div
                   key={index}
-                  className="flex items-center bg-gray-700 p-4 rounded-lg"
+                  className="flex items-center justify-between bg-gray-700 p-4 rounded-lg cursor-pointer hover:bg-gray-600 transition"
+                  onClick={() => setSelectedEvent(event)}
                 >
                   <span className="text-white text-lg font-medium">
                     {event}
@@ -97,6 +98,27 @@ const Profile = () => {
           Logout
         </button>
       </div>
+
+      {/* QR Code Modal */}
+      {selectedEvent && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-gray-800 p-6 rounded-lg text-center">
+            <h3 className="text-xl text-white font-semibold mb-4">
+              Entry Pass - {selectedEvent}
+            </h3>
+            <QRCode
+              value={`Name: ${currentUser.displayName}, Email: ${currentUser.email}, Event: ${selectedEvent}`}
+              size={200}
+            />
+            <button
+              onClick={() => setSelectedEvent(null)}
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

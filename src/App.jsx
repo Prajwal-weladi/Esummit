@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Etalks from "./components/Etalks";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
+import Scanner from "./components/Scanner";
 import { auth, provider } from "./firebaseConfig"; // Import from firebaseConfig.js
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           />
           <Route path="/etalks" element={<Etalks />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/scanner" element={<Scanner />} />
         </Routes>
       </main>
     </Router>
