@@ -141,13 +141,13 @@ const Hero = () => {
         </div>
 
         <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          2<b>5</b>
+          2<b>1</b>
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
             <h1 className="special-font hero-heading text-blue-100">
-              esum<b>m</b>it
+              15
             </h1>
 
             {/* <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
@@ -165,7 +165,7 @@ const Hero = () => {
       </div>
 
       <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        2<b>5</b>
+        2<b>1</b>
       </h1>
     </div>
   );

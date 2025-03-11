@@ -25,7 +25,7 @@ const Profile = () => {
   const fetchRegisteredEvents = async (userEmail) => {
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbwKM30cpDBdDbzFl65tzPsLOnF2nc8Fyon-8ptagO6F14hL7pX3UQoyFmuEUIupa3a9zw/exec"
+        "https://script.google.com/macros/s/AKfycbwI2J4__N86DvUtL5AqKsfEmYlPvpi7JcZuwBVACSoAYiie1MnUNxYDUXIybVTF1EYZXQ/exec"
       );
       const data = await response.json();
 

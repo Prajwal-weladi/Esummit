@@ -69,7 +69,11 @@ const Navbar = () => {
                   {item}
                 </Link>
               ))}
-
+              
+              <Link to="/startup-showcase" className="nav-hover-btn">
+                              Startup Showcase
+                            </Link>
+                            
               {/* 🔹 Register Button in Navbar */}
               {user ? (
                 <Link to="/profile" className="nav-hover-btn">

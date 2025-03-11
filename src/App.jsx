@@ -6,6 +6,7 @@ import Features from "./components/Features";
 import Story from "./components/Story";
 import Contact from "./components/Contact";
 import Etalks from "./components/Etalks";
+import StartupShowcase from "./components/StartupShowcase";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Scanner from "./components/Scanner";
