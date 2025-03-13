@@ -1,5 +1,6 @@
 import { FaDiscord, FaTwitter, FaYoutube, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const socialLinks = [
   { href: "https://instagram.com/v_edc", icon: <FaInstagram />, label: "Instagram" },
@@ -55,6 +56,12 @@ const Footer = () => {
       {/* Centered Logo at the Bottom */}
       <div className="flex justify-center mt-12">
         <img src="img/edclogo.png" alt="V-EDC Logo" className="h-20 w-auto" />
+      </div>
+
+      <div className="mt-12 text-center">
+        <Link to="/competitions" className="hover:text-gray-300 transition-colors">
+          Competitions
+        </Link>
       </div>
     </motion.footer>
   );

@@ -10,7 +10,8 @@ import StartupShowcase from "./components/StartupShowcase";
 import Footer from "./components/Footer";
 import Profile from "./components/Profile";
 import Scanner from "./components/Scanner";
-import { auth, provider } from "./firebaseConfig"; // Import from firebaseConfig.js
+import Competitions from "./components/Competitions"; // Import the new component
+import { auth, provider } from "./firebaseConfig";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="/etalks" element={<Etalks />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/scanner" element={<Scanner />} />
+          <Route path="/competitions" element={<Competitions />} /> {/* Add new route */}
         </Routes>
       </main>
     </Router>
