@@ -60,20 +60,26 @@ const Navbar = () => {
 
           <div className="flex h-full items-center">
             <div className="hidden md:block">
-              {["Home", "Competition", "E-talks", "About", "Contact"].map((item, index) => (
+              {[
+                { name: "Home", path: "/" },
+                { name: "Competition", path: "/competitions" },
+                { name: "E-talks", path: "/etalks" },
+                { name: "About", path: "/#about" },
+                { name: "Contact", path: "/#contact" }
+              ].map((item, index) => (
                 <Link
                   key={index}
-                  to={item === "E-talks" ? "/etalks" : `/#${item.toLowerCase()}`}
+                  to={item.path}
                   className="nav-hover-btn"
                 >
-                  {item}
+                  {item.name}
                 </Link>
               ))}
               
               <Link to="/startup-showcase" className="nav-hover-btn">
-                              Startup Showcase
-                            </Link>
-                            
+                Startup Showcase
+              </Link>
+              
               {/* 🔹 Register Button in Navbar */}
               {user ? (
                 <Link to="/profile" className="nav-hover-btn">
